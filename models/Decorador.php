@@ -61,7 +61,7 @@ abstract class Decorador extends Ingredientes {
         return $this->componente->carne;
     }
 
-    public function getPollp() {
+    public function getPollo() {
         return $this->componente->pollo;
     }
 
