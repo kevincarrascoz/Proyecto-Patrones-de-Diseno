@@ -4,6 +4,10 @@ namespace models;
 require_once 'Ingredientes.php';
 
 abstract class Decorador extends Ingredientes {
+    /**
+     * 
+     * @var ComponenteGraficoIngredientes
+     */
     private $componente;
     
     public function __construct(Ingredientes $componente){
