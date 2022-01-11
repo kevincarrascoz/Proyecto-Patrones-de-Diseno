@@ -4,12 +4,14 @@ require_once 'models/PaltaDecorador.php';
 require_once 'models/ChampinonDecorador.php';
 require_once 'models/Ingredientes.php';
 require_once 'models/Preparaciones.php';
+require_once 'models/Menu.php';
 
 use models\Decorador;
 use models\PaltaDecorador;
 use models\ChampinonDecorador;
 use models\Ingredientes;
 use models\Preparaciones;
+use models\Menu;
 
 //creacion notificacion interna 1
 $ingredientes = new Ingredientes();
@@ -40,4 +42,15 @@ $preparaciones->setBarrosJarpa($ingredientes->getCarne());
 $preparaciones->setChurrasco($ingredientes->getCarne());
 echo "Preparaciones Disponibles<br>";
 echo $preparaciones->mostrar();
+echo "<br><br>";
+$menu = new Menu($preparaciones);
+echo "Menu Sandwiches Veganos<br>";
+echo $menu->menuSandwichesVeganos();
+echo "<br>";
+echo "Menu Sandwiches De Carne<br>";
+echo $menu->menuSandwichesCarne();
+echo "<br>";
+echo "Menu Sandwiches De Pollo<br>";
+echo $menu->menuSandwichesPollo();
+echo "<br>";
 
