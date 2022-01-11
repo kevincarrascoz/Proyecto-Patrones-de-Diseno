@@ -6,6 +6,7 @@ require_once 'models/Ingredientes.php';
 require_once 'models/Preparaciones.php';
 require_once 'models/Menu.php';
 require_once 'models/Cliente.php';
+require_once 'models/Pagar.php';
 
 use models\Decorador;
 use models\PaltaDecorador;
@@ -14,6 +15,7 @@ use models\Ingredientes;
 use models\Preparaciones;
 use models\Menu;
 use models\Cliente;
+use models\Pagar;
 
 //creacion notificacion interna 1
 $ingredientes = new Ingredientes();
@@ -55,10 +57,16 @@ echo "<br>";
 echo "Menu Sandwiches De Pollo<br>";
 echo $menu->menuSandwichesPollo();
 echo "<br><br>";
+echo "Creacion de cliente<br>";
 $cliente = new Cliente();
 $cliente->setNombre('Kevin Carrasco');
 $cliente->setRun('19834522-4');
 $cliente->setDireccion('Edimburgo 1712');
 $cliente->setTelefono('942018930');
 echo $cliente->mostrar();
+$cliente->realizarPedido();
+echo "<br><br>";
 
+
+$pago = new Pagar('5000', 'CLP');
+echo $pago->mostrar();

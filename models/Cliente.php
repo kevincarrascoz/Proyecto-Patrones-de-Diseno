@@ -47,6 +47,11 @@ class Cliente{
         return $this->telefono;
     }
 
+    public function realizarPedido(){
+        EstadoPedido::iniciarSolicitud();
+        
+    }
+
 
 
 
