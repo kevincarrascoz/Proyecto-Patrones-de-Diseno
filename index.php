@@ -72,5 +72,3 @@ $cliente->setRun('19834522-4');
 $cliente->setDireccion('Edimburgo 1712');
 $cliente->setTelefono('942018930');
 echo $cliente->mostrar();
-$cliente->solicitarLlevar($menu->menuSandwichesPollo());
-echo "<br><br>";
