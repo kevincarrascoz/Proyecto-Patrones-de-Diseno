@@ -41,6 +41,10 @@ class ChampinonDecorador extends Decorador{
         return $this->champinon;
     }
 
+    public function descontarChampinon() {
+        $this->champinon = $this->champinon - 1;
+    }
+
     public function mostrar2() {
         $obj = parent::mostrar2();
         $obj['Cantidad de Champinon'] = $this->getChampinon();

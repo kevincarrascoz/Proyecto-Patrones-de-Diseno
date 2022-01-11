@@ -41,6 +41,10 @@ class PaltaDecorador extends Decorador{
         return $this->palta;
     }
 
+    public function descontarPalta() {
+        $this->palta = $this->palta - 1;
+    }
+
     public function mostrar2() {
         $obj = parent::mostrar2();
         $obj['Cantidad de Palta'] = $this->getPalta();
