@@ -5,20 +5,13 @@ require_once 'Ingredientes.php';
 
 class Ingredientes{
 
-    private $titulo;
-    private $descripcion;
-    private $prioridad;
-    private $duracion;
-    private $color;
-    private $estado;
-
-    private int $carne=10;
-    private int $pollo=9;
-    private int $carneDeSoya=8;
-    private int $tomate=7;
-    private int $lechuga=6;
-    private int $queso=5;
-    private int $quesoVegano=4;
+    private int $carne;
+    private int $pollo;
+    private int $carneDeSoya;
+    private int $tomate;
+    private int $lechuga;
+    private int $queso;
+    private int $quesoVegano;
     
     public function __construct() {
 
