@@ -97,20 +97,20 @@ class Ingredientes{
         $this->carneDeSoya = $this->carneDeSoya - 1;
     }
 
-    public function descontarCarneDeSoya() {
-        $this->carneDeSoya = $this->carneDeSoya - 1;
+    public function descontarTomate() {
+        $this->tomate = $this->tomate - 1;
     }
 
-    public function descontarCarneDeSoya() {
-        $this->carneDeSoya = $this->carneDeSoya - 1;
+    public function descontarLechuga() {
+        $this->lechuga = $this->lechuga - 1;
     }
 
-    public function descontarCarneDeSoya() {
-        $this->carneDeSoya = $this->carneDeSoya - 1;
+    public function descontarQueso() {
+        $this->queso = $this->queso - 1;
     }
 
-    public function descontarCarneDeSoya() {
-        $this->carneDeSoya = $this->carneDeSoya - 1;
+    public function descontarQuesoVegano() {
+        $this->quesoVegano = $this->quesoVegano - 1;
     }
 
     public function mostrar2() {
