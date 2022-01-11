@@ -44,8 +44,8 @@ class PedidoParaLlevar implements TipoPedido{
         return $this;
     }
 
-    public function pagarPedido(){
-        $pago = new Pago($valorPedido, 'CLP');
+    public function pagarPedido($valorPedido){
+        $pago = new Pagar($valorPedido, 'CLP');
         $this->estado = EstadoPedido::porPagar();
     }
 
@@ -56,7 +56,6 @@ class PedidoParaLlevar implements TipoPedido{
         return array(
             'Fecha Pedido'=>$this->fecha,
             'estado'=>$this->estado,
-            'Correo'=>$this->getCorreo(),
             'Pedido Seleccionado del menu'=> array_map($funcionAux, $this->ordenes)
         );
     }

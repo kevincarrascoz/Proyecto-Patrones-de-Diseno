@@ -11,7 +11,11 @@ class EstadoPedido {
     static private $pagado = null;
 
     private $name;
-    
+    /**
+     * __construct
+     * implementacion del constructor
+     * @param  string $name
+     */
     private function __construct($name) {
         $this->name = $name;
     }

@@ -5,7 +5,6 @@ namespace models;
 require_once "Cliente.php";
 require_once "EstadoPedido.php";
 
-use models\Cliente;
 use models\EstadoPedido;
 
 class Cliente{

@@ -14,6 +14,7 @@ use models\Cliente;
 use models\EstadoPedido;
 use models\TipoPedido;
 
+
 class PedidoLocal implements TipoPedido{
 
     public $fecha;
@@ -48,8 +49,8 @@ class PedidoLocal implements TipoPedido{
 
     }
 
-    public function pagarPedido(){
-        $pago = new Pago($valorPedido, 'CLP');
+    public function pagarPedido($valorPedido){
+        $pago = new Pagar($valorPedido, 'CLP');
         $this->estado = EstadoPedido::enEspera();
     }
 
@@ -61,7 +62,6 @@ class PedidoLocal implements TipoPedido{
             'Fecha Pedido'=>$this->fecha,
             'Numer de mesa'=>$this->numeroDeMesa,
             'estado'=>$this->estado,
-            'Correo'=>$this->getCorreo(),
             'Pedido Seleccionado del menu'=> array_map($funcionAux, $this->ordenes)
         );
     }

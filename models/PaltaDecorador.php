@@ -23,7 +23,7 @@ class PaltaDecorador extends Decorador{
     }
 
     public static function claseGetPalta($decorado) {
-        $obj = InterlineadoDecorador::getPrimerPaltaDecorador($decorado);
+        $obj = PaltaDecorador::getPrimerPaltaDecorador($decorado);
         return $obj->getPalta();
     }
 
