@@ -85,6 +85,34 @@ class Ingredientes{
         return $this->quesoVegano;
     }
 
+    public function descontarCarne() {
+        $this->carne = $this->carne - 1;
+    }
+
+    public function descontarPollo() {
+        $this->pollo = $this->pollo - 1;
+    }
+
+    public function descontarCarneDeSoya() {
+        $this->carneDeSoya = $this->carneDeSoya - 1;
+    }
+
+    public function descontarCarneDeSoya() {
+        $this->carneDeSoya = $this->carneDeSoya - 1;
+    }
+
+    public function descontarCarneDeSoya() {
+        $this->carneDeSoya = $this->carneDeSoya - 1;
+    }
+
+    public function descontarCarneDeSoya() {
+        $this->carneDeSoya = $this->carneDeSoya - 1;
+    }
+
+    public function descontarCarneDeSoya() {
+        $this->carneDeSoya = $this->carneDeSoya - 1;
+    }
+
     public function mostrar2() {
         return array(
             "Cantidad de Carne" => $this->getCarne(),
