@@ -13,6 +13,8 @@ class Cliente{
     private $run;
     private $direccion;
     private $telefono;
+    private $pedidos;
+    private $valor;
 
     public function __construct() 
     {
@@ -47,15 +49,31 @@ class Cliente{
         return $this->telefono;
     }
 
-    public function realizarPedido(){
-        EstadoPedido::iniciarSolicitud();
-        
+    /**
+     * solicitar
+     * 
+     * Solicita un pedido desde este cliente para consumir en el local
+     * @param array $orden
+     * @return Pedido
+     */
+    public function solicitarLocal($orden) {
+        $pedido = new PedidoLocal(strtotime("now"), EstadoPedido::iniciarSolicitud(), $orden, $valorPedido);
+        array_push($this->pedidos, $pedido);
+        return $pedido;
     }
 
-
-
-
-
+    /**
+     * solicitar
+     * 
+     * Solicita un pedido desde este cliente para llevar
+     * @param array $orden
+     * @return Pedido
+     */
+    public function solicitarLlevar($orden) {
+        $pedido = new PedidoParaLlevar(strtotime("now"), EstadoPedido::iniciarSolicitud(), $orden, $valorPedido);
+        array_push($this->pedidos, $pedido);
+        return $pedido;
+    }
 
 
 

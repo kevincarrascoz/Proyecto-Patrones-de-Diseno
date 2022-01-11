@@ -7,6 +7,10 @@ require_once 'models/Preparaciones.php';
 require_once 'models/Menu.php';
 require_once 'models/Cliente.php';
 require_once 'models/Pagar.php';
+require_once 'models/Pedido.php';
+require_once 'models/PedidoLocal.php';
+require_once 'models/PedidoParaLlevar.php';
+require_once 'models/TipoPedido.php';
 
 use models\Decorador;
 use models\PaltaDecorador;
@@ -16,6 +20,10 @@ use models\Preparaciones;
 use models\Menu;
 use models\Cliente;
 use models\Pagar;
+use models\Pedido;
+use models\PedidoLocal;
+use models\PedidoParaLlevar;
+use models\TipoPedido;
 
 //creacion notificacion interna 1
 $ingredientes = new Ingredientes();
@@ -64,9 +72,5 @@ $cliente->setRun('19834522-4');
 $cliente->setDireccion('Edimburgo 1712');
 $cliente->setTelefono('942018930');
 echo $cliente->mostrar();
-$cliente->realizarPedido();
+$cliente->solicitarLlevar($menu->menuSandwichesPollo());
 echo "<br><br>";
-
-
-$pago = new Pagar('5000', 'CLP');
-echo $pago->mostrar();
