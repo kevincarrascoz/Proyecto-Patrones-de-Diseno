@@ -10,6 +10,10 @@ abstract class Decorador extends Ingredientes {
      */
     private $componente;
     
+    /**
+     *
+     * @param ComponenteGraficoIngredientes $componente            
+     */
     public function __construct(Ingredientes $componente){
         $this->componente = $componente;
     }
