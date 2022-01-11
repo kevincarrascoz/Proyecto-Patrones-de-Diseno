@@ -14,7 +14,8 @@ use models\Cliente;
 use models\EstadoPedido;
 use models\TipoPedido;
 
-class PedidoParaLlevar implements TipoPedido{
+class PedidoParaLlevar implements TipoPedido
+{
 
     public $fecha;
     public $estado;
@@ -25,44 +26,47 @@ class PedidoParaLlevar implements TipoPedido{
      *
      * @param ComponenteGraficoIngredientes $componente            
      */
-    public function __construct($fecha, $estado, $orden, $valorPedido) 
+    public function __construct($fecha, $estado, $orden, $valorPedido)
     {
         $this->fecha = $fecha;
         $this->estado = $estado;
         $this->ordenes = array();
         $this->valorPedido = $valorPedido;
     }
-   
 
-    public function calcularValorPedido($valor) {
+
+    public function calcularValorPedido($valor)
+    {
         $this->valorPedido = $valor;
         return $this;
     }
 
-    public function estadoPedido(){
+    public function estadoPedido()
+    {
         $this->estado = EstadoPedido::porPagar();
         return $this;
     }
 
-    public function pagarPedido($valorPedido){
+    public function pagarPedido($valorPedido)
+    {
         $pago = new Pagar($valorPedido, 'CLP');
         $this->estado = EstadoPedido::porPagar();
     }
 
-    public function mostrar2() {
-        $funcionAux = function($t) {
+    public function mostrar2()
+    {
+        $funcionAux = function ($t) {
             return $t->mostrar2();
         };
         return array(
-            'Fecha Pedido'=>$this->fecha,
-            'estado'=>$this->estado,
-            'Pedido Seleccionado del menu'=> array_map($funcionAux, $this->ordenes)
+            'Fecha Pedido' => $this->fecha,
+            'estado' => $this->estado,
+            'Pedido Seleccionado del menu' => array_map($funcionAux, $this->ordenes)
         );
     }
 
-    public function mostrar(){
-        return json_encode($this->mostrar2(),JSON_PRETTY_PRINT);
+    public function mostrar()
+    {
+        return json_encode($this->mostrar2(), JSON_PRETTY_PRINT);
     }
-
-    
 }

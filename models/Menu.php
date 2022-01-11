@@ -1,28 +1,33 @@
 <?php
 
 namespace models;
+
 require_once "Preparaciones.php";
 
-class Menu extends Preparaciones{
+class Menu extends Preparaciones
+{
 
 
 
-    public function __construct(Preparaciones $componente) {
+    public function __construct(Preparaciones $componente)
+    {
         $this->componente = $componente;
-     
     }
 
-    public function getComponente() {
+    public function getComponente()
+    {
         return $this->componente;
     }
 
-    public function menuSandwichesVeganos(){
+    public function menuSandwichesVeganos()
+    {
         return json_encode(array(
             "Barros Lomo Vegan" => $this->componente->getLomoVegano()
         ));
     }
 
-    Public function MenuSandwichesCarne(){
+    public function MenuSandwichesCarne()
+    {
         return json_encode(array(
             "Barros Luco" => $this->componente->getBarrosLuco(),
             "Barros Jarpa" => $this->componente->getBarrosJarpa(),
@@ -30,15 +35,10 @@ class Menu extends Preparaciones{
         ));
     }
 
-    Public function MenuSandwichesPollo(){
+    public function MenuSandwichesPollo()
+    {
         return json_encode(array(
             "Hamburguesa Lomo Pollo" => $this->componente->getLomoPollo()
         ));
     }
-
-
-
-
-
-
 }

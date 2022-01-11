@@ -1,9 +1,11 @@
 <?php
+
 namespace models;
 
 require_once 'Ingredientes.php';
 
-class Ingredientes{
+class Ingredientes
+{
 
     private int $carne;
     private int $pollo;
@@ -12,108 +14,131 @@ class Ingredientes{
     private int $lechuga;
     private int $queso;
     private int $quesoVegano;
-    
-    public function __construct() {
 
+    public function __construct()
+    {
     }
 
-    public function setCarne($value) {
+    public function setCarne($value)
+    {
         $this->carne = $value;
         return $this;
     }
 
-    public function setPollo($value) {
+    public function setPollo($value)
+    {
         $this->pollo = $value;
         return $this;
     }
 
-    public function setCarneDeSoya($value) {
+    public function setCarneDeSoya($value)
+    {
         $this->carneDeSoya = $value;
         return $this;
     }
 
-    public function setTomate($value) {
+    public function setTomate($value)
+    {
         $this->tomate = $value;
         return $this;
     }
 
-    public function setLechuga($value) {
+    public function setLechuga($value)
+    {
         $this->lechuga = $value;
         return $this;
     }
 
-    public function setQueso($value) {
+    public function setQueso($value)
+    {
         $this->queso = $value;
         return $this;
     }
 
-    public function setQuesoVegano($value) {
+    public function setQuesoVegano($value)
+    {
         $this->quesoVegano = $value;
         return $this;
     }
 
-    public function construir() {
+    public function construir()
+    {
         return $this;
     }
 
 
-    public function getCarne() {
+    public function getCarne()
+    {
         return $this->carne;
     }
 
-    public function getPollo() {
+    public function getPollo()
+    {
         return $this->pollo;
     }
 
-    public function getCarneDeSoya() {
+    public function getCarneDeSoya()
+    {
         return $this->carneDeSoya;
     }
 
-    public function getTomate() {
+    public function getTomate()
+    {
         return $this->tomate;
     }
 
-    public function getLechuga() {
+    public function getLechuga()
+    {
         return $this->lechuga;
     }
 
-    public function getQueso() {
+    public function getQueso()
+    {
         return $this->queso;
     }
 
-    public function getQuesoVegano() {
+    public function getQuesoVegano()
+    {
         return $this->quesoVegano;
     }
 
-    public function descontarCarne() {
+    public function descontarCarne()
+    {
         $this->carne = $this->carne - 1;
     }
 
-    public function descontarPollo() {
+    public function descontarPollo()
+    {
         $this->pollo = $this->pollo - 1;
     }
 
-    public function descontarCarneDeSoya() {
+    public function descontarCarneDeSoya()
+    {
         $this->carneDeSoya = $this->carneDeSoya - 1;
     }
 
-    public function descontarTomate() {
+    public function descontarTomate()
+    {
         $this->tomate = $this->tomate - 1;
     }
 
-    public function descontarLechuga() {
+    public function descontarLechuga()
+    {
         $this->lechuga = $this->lechuga - 1;
     }
 
-    public function descontarQueso() {
+    public function descontarQueso()
+    {
         $this->queso = $this->queso - 1;
     }
 
-    public function descontarQuesoVegano() {
+    public function descontarQuesoVegano()
+    {
         $this->quesoVegano = $this->quesoVegano - 1;
     }
 
-    public function mostrar2() {
+    public function mostrar2()
+    {
         return array(
             "Cantidad de Carne" => $this->getCarne(),
             "Cantidad de Pollo" => $this->getPollo(),
@@ -125,7 +150,8 @@ class Ingredientes{
         );
     }
 
-    public function mostrar() {
+    public function mostrar()
+    {
         return json_encode($this->mostrar2());
     }
 }

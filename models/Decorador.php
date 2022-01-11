@@ -1,95 +1,115 @@
 <?php
+
 namespace models;
 
 require_once 'Ingredientes.php';
 
-abstract class Decorador extends Ingredientes {
+abstract class Decorador extends Ingredientes
+{
     /**
      * 
      * @var ComponenteGraficoIngredientes
      */
     private $componente;
-    
+
     /**
      *
      * @param ComponenteGraficoIngredientes $componente            
      */
-    public function __construct(Ingredientes $componente){
+    public function __construct(Ingredientes $componente)
+    {
         $this->componente = $componente;
     }
 
-    public function getComponente() {
+    public function getComponente()
+    {
         return $this->componente;
     }
 
-    public function mostrar2() {
+    public function mostrar2()
+    {
         return $this->componente->mostrar2();
     }
 
-    public function mostrar() {
+    public function mostrar()
+    {
         return json_encode($this->mostrar2());
     }
 
-    public function setCarne($value) {
+    public function setCarne($value)
+    {
         $this->componente->carne = $value;
         return $this;
     }
 
-    public function setPollo($value) {
+    public function setPollo($value)
+    {
         $this->componente->pollo = $value;
         return $this;
     }
 
-    public function setCarneDeSoya($value) {
+    public function setCarneDeSoya($value)
+    {
         $this->componente->carneDeSoya = $value;
         return $this;
     }
 
-    public function setTomate($value) {
+    public function setTomate($value)
+    {
         $this->componente->tomate = $value;
         return $this;
     }
 
-    public function setLechuga($value) {
+    public function setLechuga($value)
+    {
         $this->componente->lechuga = $value;
         return $this;
     }
 
-    public function setQueso($value) {
+    public function setQueso($value)
+    {
         $this->componente->queso = $value;
         return $this;
     }
 
-    public function setQuesoVegano($value) {
+    public function setQuesoVegano($value)
+    {
         $this->componente->quesoVegano = $value;
         return $this;
     }
 
-    public function getCarne() {
+    public function getCarne()
+    {
         return $this->componente->carne;
     }
 
-    public function getPollo() {
+    public function getPollo()
+    {
         return $this->componente->pollo;
     }
 
-    public function getCarneDeSoya() {
+    public function getCarneDeSoya()
+    {
         return $this->componente->carneDeSoya;
     }
 
-    public function getTomate() {
+    public function getTomate()
+    {
         return $this->componente->tomate;
     }
 
-    public function getLechuga() {
+    public function getLechuga()
+    {
         return $this->componente->lechuga;
     }
 
-    public function getQueso() {
+    public function getQueso()
+    {
         return $this->componente->queso;
     }
 
-    public function getQuesoVegano() {
+    public function getQuesoVegano()
+    {
         return $this->componente->quesoVegano;
     }
 }

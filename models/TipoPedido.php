@@ -7,6 +7,3 @@ interface TipoPedido
     function mostrar2();
     function calcularValorPedido($value);
 }
-
-
-?>

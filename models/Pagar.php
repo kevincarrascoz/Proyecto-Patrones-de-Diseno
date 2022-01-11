@@ -7,31 +7,44 @@ require_once "EstadoPedido.php";
 
 use models\EstadoPedido;
 
-class Pagar {
-    public $moneda;   
-    public $estado; 
+class Pagar
+{
+    public $moneda;
+    public $estado;
 
-    public function __construct($monto, $moneda){
-       $this->monto = $monto;
+    /**
+     * __construct
+     *
+     * @param  int $monto
+     * @param  string $moneda
+     * @return void
+     */
+    public function __construct($monto, $moneda)
+    {
+        $this->monto = $monto;
         $this->moneda = $moneda;
     }
-    
-    public function getMoneda(){
+
+    public function getMoneda()
+    {
         return $this->moneda;
     }
-    public function getMonto(){
+    public function getMonto()
+    {
         return $this->monto;
     }
-    public function Pagar(){
+
+    public function Pagar()
+    {
         $estado = EstadoPedido::pagado();
     }
 
-    public function mostrar(){
+    public function mostrar()
+    {
         return json_encode(array(
-            'Monto'=>$this->getMonto(),
-            'Moneda'=>$this->getMoneda(),
-            'Estado del pedido'=>$this->estado,
-        ) ,JSON_PRETTY_PRINT);
+            'Monto' => $this->getMonto(),
+            'Moneda' => $this->getMoneda(),
+            'Estado del pedido' => $this->estado,
+        ), JSON_PRETTY_PRINT);
     }
-
 }

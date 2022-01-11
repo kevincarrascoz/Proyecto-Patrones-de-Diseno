@@ -1,88 +1,101 @@
 <?php
 
 namespace models;
+
 require_once "Ingredientes.php";
 
-class Preparaciones {
+class Preparaciones
+{
     private $barrosLuco;
     private $lomoVegano;
     private $lomoPollo;
     private $barrosJarpa;
     private $churrasco;
 
-    public function __construct() {
-     
+    public function __construct()
+    {
     }
 
-    public function setBarrosLuco($cantidadCarne){
-        if($cantidadCarne>=1){
+    public function setBarrosLuco($cantidadCarne)
+    {
+        if ($cantidadCarne >= 1) {
             $this->barrosLuco = true;
             return $this;
-        }else{
+        } else {
             $this->barrosLuco = false;
             return $this;
         }
     }
 
-    public function setLomoVegano($cantidadCarnedeSoya){
-        if($cantidadCarnedeSoya>=1){
+    public function setLomoVegano($cantidadCarnedeSoya)
+    {
+        if ($cantidadCarnedeSoya >= 1) {
             $this->lomoVegano = true;
             return $this;
-        }else{
+        } else {
             $this->lomoVegano = false;
             return $this;
         }
     }
-    public function setLomoPollo($cantidadPollo){
-        if($cantidadPollo>=1){
+    public function setLomoPollo($cantidadPollo)
+    {
+        if ($cantidadPollo >= 1) {
             $this->lomoPollo = true;
             return $this;
-        }else{
+        } else {
             $this->lomoPollo = false;
             return $this;
         }
-        
     }
-    public function setBarrosJarpa($cantidadCarne){
-        if($cantidadCarne>=1){
+    public function setBarrosJarpa($cantidadCarne)
+    {
+        if ($cantidadCarne >= 1) {
             $this->barrosJarpa = true;
             return $this;
-        }else{
+        } else {
             $this->barrosJarpa = false;
             return $this;
         }
     }
-    public function setChurrasco($cantidadCarne){
-        if($cantidadCarne>=1){
+    public function setChurrasco($cantidadCarne)
+    {
+        if ($cantidadCarne >= 1) {
             $this->churrasco = true;
             return $this;
-        }else{
+        } else {
             $this->churrasco = false;
             return $this;
         }
     }
 
-    public function getBarrosLuco() {
+    public function getBarrosLuco()
+    {
         return $this->barrosLuco;
     }
-    public function getLomoVegano() {
+    public function getLomoVegano()
+    {
         return $this->lomoVegano;
     }
-    public function getLomoPollo() {
+    public function getLomoPollo()
+    {
         return $this->lomoPollo;
     }
-    public function getBarrosJarpa() {
+    public function getBarrosJarpa()
+    {
         return $this->barrosJarpa;
     }
-    public function getChurrasco() {
+    public function getChurrasco()
+    {
         return $this->churrasco;
     }
 
-    public function mostrar() {
+    public function mostrar()
+    {
         return json_encode($this->mostrar2());
     }
 
-    public function mostrar2() {
+    public function mostrar2()
+    {
         return array(
             "Barros Luco" => $this->getBarrosLuco(),
             "Barros Lomo Vegan" => $this->getLomoVegano(),
@@ -91,5 +104,4 @@ class Preparaciones {
             "Churrasco" => $this->getChurrasco()
         );
     }
-
 }

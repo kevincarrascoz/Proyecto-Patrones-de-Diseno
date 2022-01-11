@@ -2,7 +2,8 @@
 
 namespace models;
 
-class EstadoPedido {
+class EstadoPedido
+{
     static private $iniciarSolicitud = null;
     static private $enEspera = null;
     static private $pedidoEntregado = null;
@@ -16,61 +17,101 @@ class EstadoPedido {
      * implementacion del constructor
      * @param  string $name
      */
-    private function __construct($name) {
+    private function __construct($name)
+    {
         $this->name = $name;
     }
 
-    public function getName() {
+    public function getName()
+    {
         return $this->name;
     }
 
-    static public function iniciarSolicitud() {
+    /**
+     * Estado inicial de un pedido
+     *
+     * @return Estados
+     */
+    static public function iniciarSolicitud()
+    {
         if (!EstadoPedido::$iniciarSolicitud) {
             EstadoPedido::$iniciarSolicitud = new EstadoPedido("Iniciar Solicitud");
         }
         return EstadoPedido::$iniciarSolicitud;
     }
 
-    static public function enEspera() {
+    /**
+     * Estado cuando el pedido esta en espera
+     *
+     * @return Estados
+     */
+    static public function enEspera()
+    {
         if (!EstadoPedido::$enEspera) {
             EstadoPedido::$enEspera = new EstadoPedido("En espera del pedido");
         }
         return EstadoPedido::$enEspera;
     }
 
-    static public function pedidoEntregado() {
+    /**
+     * Estado cuando el pedido fue entregado al cliente
+     *
+     * @return Estados
+     */
+    static public function pedidoEntregado()
+    {
         if (!EstadoPedido::$pedidoEntregado) {
             EstadoPedido::$pedidoEntregado = new EstadoPedido("Pedido Entregado");
         }
         return EstadoPedido::$pedidoEntregado;
     }
 
-    static public function consumiendo() {
+    /**
+     * Estado cuando el pedido esta siendo consumido por el cliente en el local
+     *
+     * @return Estados
+     */
+    static public function consumiendo()
+    {
         if (!EstadoPedido::$consumiendo) {
             EstadoPedido::$consumiendo = new EstadoPedido("Consumiendo");
         }
         return EstadoPedido::$consumiendo;
     }
 
-    static public function porPagar() {
+    /**
+     * Estado cuando el cliente hizo el pedido pero aun no lo paga
+     *
+     * @return Estados
+     */
+    static public function porPagar()
+    {
         if (!EstadoPedido::$porPagar) {
             EstadoPedido::$porPagar = new EstadoPedido("Por pagar");
         }
         return EstadoPedido::$porPagar;
     }
 
-    static public function pagado() {
+    /**
+     * Estado cuando el cliente ya pago el pedido
+     *
+     * @return Estados
+     */
+    static public function pagado()
+    {
         if (!EstadoPedido::$pagado) {
             EstadoPedido::$pagado = new EstadoPedido("Pagado");
         }
         return EstadoPedido::$pagado;
     }
 
-    public function mostrar() {
+    public function mostrar()
+    {
         return json_encode($this->mostrar2());
     }
 
-    public function mostrar2() {
+    public function mostrar2()
+    {
         return $this->name;
     }
 }

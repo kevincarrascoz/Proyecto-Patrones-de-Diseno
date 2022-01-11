@@ -51,5 +51,3 @@ class PaltaDecorador extends Decorador{
         return $obj;
     }
 }
-
-?>
