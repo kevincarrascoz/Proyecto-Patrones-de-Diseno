@@ -5,6 +5,7 @@ require_once 'models/ChampinonDecorador.php';
 require_once 'models/Ingredientes.php';
 require_once 'models/Preparaciones.php';
 require_once 'models/Menu.php';
+require_once 'models/Cliente.php';
 
 use models\Decorador;
 use models\PaltaDecorador;
@@ -12,6 +13,7 @@ use models\ChampinonDecorador;
 use models\Ingredientes;
 use models\Preparaciones;
 use models\Menu;
+use models\Cliente;
 
 //creacion notificacion interna 1
 $ingredientes = new Ingredientes();
@@ -52,5 +54,11 @@ echo $menu->menuSandwichesCarne();
 echo "<br>";
 echo "Menu Sandwiches De Pollo<br>";
 echo $menu->menuSandwichesPollo();
-echo "<br>";
+echo "<br><br>";
+$cliente = new Cliente();
+$cliente->setNombre('Kevin Carrasco');
+$cliente->setRun('19834522-4');
+$cliente->setDireccion('Edimburgo 1712');
+$cliente->setTelefono('942018930');
+echo $cliente->mostrar();
 
