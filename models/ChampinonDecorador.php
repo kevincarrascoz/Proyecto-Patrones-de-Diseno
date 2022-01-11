@@ -8,6 +8,10 @@ class ChampinonDecorador extends Decorador{
 
     public int $champinon;
 
+    /**
+     *
+     * @param ComponenteGraficoIngredientes $componente            
+     */
     public static function getPrimerChampinonDecorador($decorado) {
         $obj = $decorado;
         $claseFuente = '\models\ChampinonDecorador';

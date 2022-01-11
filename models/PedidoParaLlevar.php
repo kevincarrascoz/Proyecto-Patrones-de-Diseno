@@ -21,6 +21,10 @@ class PedidoParaLlevar implements TipoPedido{
     public $ordenes;
     public $valorPedido;
 
+    /**
+     *
+     * @param ComponenteGraficoIngredientes $componente            
+     */
     public function __construct($fecha, $estado, $orden, $valorPedido) 
     {
         $this->fecha = $fecha;
